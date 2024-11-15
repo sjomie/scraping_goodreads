@@ -84,12 +84,6 @@ def get_book_details(book_link: str) -> Dict[str, Any]:
     book_publishing_date = soup.find("p", attrs={"data-testid": "publicationInfo"})
     if book_publishing_date:
         book_details["book_publishing_date"] = date_to_epoch(' '.join(book_publishing_date.text.split()[2:]))
-    
-    # Get author name
-    author_name = soup.find("span", class_="ContributorLink__name")
-    if author_name:
-        book_details["author"]["author_name"] = author_name.text.strip()
-
     # Get author's written books number
     author_written_books_number = soup.find("div", class_="FeaturedPerson__infoPrimary").find("span", class_="Text Text__body3 Text__subdued")
     if author_written_books_number:
@@ -100,13 +94,7 @@ def get_book_details(book_link: str) -> Dict[str, Any]:
             book_details["author"]["author_written_books_number"] = float(raw_written_books_number[:-1]) * 1000
         else:
             book_details["author"]["author_written_books_number"] = int(raw_written_books_number)
-    
-    # Get author's followers number
-    author_followers_number = soup.find("div", class_="FeaturedPerson__infoPrimary").find("span", class_="u-dot-before")
-    if author_followers_number:
-        raw_followers = author_followers_number.text.split()[0]
-        if ',' in raw_followers:
-            book_details["author"]["author_followers_number"] = int(raw_followers.replace(',', ''))
+ 
         elif 'k' in raw_followers:
             book_details["author"]["author_followers_number"] = float(raw_followers[:-1]) * 1000
         else:
@@ -137,15 +125,6 @@ from module import (
 def main():
     all_books_data = [] 
     total_pages = 25
-
-    # Get all book links
-    all_book_links = get_all_book_links(total_pages)
-
-    for i, book_link in enumerate(all_book_links, 1):
-        print(f"Processing book {i}/{len(all_book_links)}: {book_link}")
-        book_details = get_book_details(book_link)
-        if book_details:
-            all_books_data.append(book_details)
 
     # Save the data to a JSON file
     save_to_json(all_books_data, "goodreads_books.json")
