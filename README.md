@@ -2,7 +2,7 @@
 # Description
 Ce projet de scraping a pour objectif de collecter et d'analyser des données provenant de [https://www.goodreads.com/shelf/show/classics?page=1] afin de réaliser un projet en classe.
 
-Projet réalisé en bînome avec Guillaume REDARES, 
+Projet réalisé en bînome avec Guillaume REDARES, ainsi que Matthieu Larboullet, intervenant et conducter de nos travaux.  
 
 Les données extraites seront utilisées pour réaliser une analyse statistique sur les classiques de la littérature.
 
@@ -180,7 +180,7 @@ Mon bînome et moi même rendons ce code libre de droit à tout usage.
 # 📧 Contact
 Pour toute question ou suggestion, contactez-moi à sjomie@eugeniaschool.com.
 
-Je remercie mon bînome sans Guillaume sans qui ce résultat n'aurait jamais pu être obtenu. 
+Je remercie mon bînome Guillaume, et mMattheu LARBOULLET sans qui ce résultat n'aurait jamais pu être obtenu. 
 
 
 
