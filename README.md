@@ -53,32 +53,6 @@ def get_book_details(book_link: str) -> Dict[str, Any]:
     book_title = soup.find("h1", class_="Text__title1")
     if book_title:
         book_details["book_title"] = book_title.text.strip()
-    
-    # Get book rating
-    book_rating = soup.find("div", class_="RatingStatistics__rating")
-    if book_rating:
-        book_details["book_rating"] = float(book_rating.text.strip())
-    
-    # Get number of ratings
-    book_ratings_number = soup.find("span", attrs={"data-testid": "ratingsCount"})
-    if book_ratings_number:
-        count_text = book_ratings_number.text.split()[0].replace(',', '')
-        book_details["book_ratings_number"] = int(count_text)
-
-    # Get number of reviews
-    book_reviews_number = soup.find("span", attrs={"data-testid": "reviewsCount"})
-    if book_reviews_number:
-        reviews_text = book_reviews_number.text.split()[0].replace(',', '')
-        book_details["book_reviews_number"] = int(reviews_text)
-
-    # Get number of pages
-    book_pages_number = soup.find("p", attrs={"data-testid": "pagesFormat"})
-    if book_pages_number:
-        try:
-            pages_text = book_pages_number.text.split()[0]
-            book_details["book_pages_number"] = int(pages_text)
-        except:
-            book_details["book_pages_number"] = -1
 
     # Get publishing date
     book_publishing_date = soup.find("p", attrs={"data-testid": "publicationInfo"})
