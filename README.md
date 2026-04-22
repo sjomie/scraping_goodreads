@@ -133,7 +133,7 @@ Mon bînome et moi même rendons ce code libre de droit à tout usage.
 # 📧 Contact
 Pour toute question ou suggestion, contactez-moi à sjomie@eugeniaschool.com.
 
-Je remercie mon bînome Guillaume, et mMattheu LARBOULLET sans qui ce résultat n'aurait jamais pu être obtenu. 
+Je remercie mon bînome Guillaume, et Mattheu LARBOULLET sans qui ce résultat n'aurait jamais pu être obtenu. 
 
 
 
